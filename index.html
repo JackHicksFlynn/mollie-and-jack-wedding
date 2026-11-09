@@ -37,7 +37,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:2px dashed var(--ink);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1.5px solid var(--ink-faint)}
@@ -51,7 +51,7 @@ a{color:inherit}
 @media (max-width:640px){.nav .hide-sm{display:none}.nav .mono{font-size:20px}.hero .where{text-align:center}.hero .where img{margin-inline:auto}}
 
 /* hero */
-.hero{position:relative;text-align:center;padding-bottom:40px;overflow:hidden}
+.hero{position:relative;text-align:center;padding-bottom:24px;overflow:hidden}
 .hero .lights{width:min(1250px,150%);max-width:none;margin:-4% auto 0;position:relative;left:50%;transform:translateX(-50%)}
 .hero .names{width:min(720px,92%);margin:8px auto 0}
 .hero .lead{font-family:var(--f-body);font-weight:600;letter-spacing:.12em;font-size:clamp(13px,2.1vw,18px);margin:18px 0 0}
@@ -65,24 +65,24 @@ a{color:inherit}
 .spk{position:absolute;pointer-events:none}
 
 /* sections */
-section.block{padding-block:72px}
+section.block{padding-block:clamp(32px,4vw,48px)}
 .h2{font-family:var(--f-brush);font-weight:400;font-size:clamp(52px,8vw,84px);line-height:.9;margin:0;text-align:center;text-wrap:balance;letter-spacing:.01em}
 .kicker{font-family:var(--f-body);letter-spacing:.14em;font-size:14px;text-align:center;margin:12px 0 0;color:var(--ink-soft)}
 .h3{font-family:var(--f-bold);font-weight:400;font-size:25px;letter-spacing:.05em;line-height:1.1;margin:0 0 6px}
 p{margin:0}
 .prose p+p{margin-top:14px}
-hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-repeat;max-width:320px;margin:56px auto 0}
+hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-repeat;max-width:320px;margin:clamp(28px,3vw,40px) auto 0}
 
 /* story */
-.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center;margin-top:44px}
-.story .art{max-width:min(440px,100%);justify-self:center}
-.story .prose{max-width:34em}
+.story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center;margin-top:32px}
+.story .art{max-width:min(400px,100%);justify-self:center}
+.story .prose{max-width:38em}
 .todo{border:2px dashed var(--ink-faint);border-radius:14px;padding:14px 16px;color:var(--ink-soft);font-weight:500}
 .todo b{font-family:var(--f-bold);font-weight:400;letter-spacing:.05em;display:block;color:var(--ink)}
 @media (max-width:760px){.story{grid-template-columns:minmax(0,1fr);gap:28px}.story .art{max-width:min(320px,100%)}}
 
 /* the day */
-.day{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 56px;margin-top:48px;align-items:start}
+.day{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 64px;margin-top:32px;align-items:start}
 .sched{list-style:none;margin:0;padding:0;border-left:2.5px solid var(--ink);margin-left:8px}
 .sched li{position:relative;padding:0 0 22px 26px}
 .sched li:last-child{padding-bottom:0}
@@ -98,7 +98,7 @@ hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-rep
 @media (max-width:480px){.cards{grid-template-columns:1fr}}
 
 /* getting there */
-.there{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:44px;align-items:center}
+.there{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 64px;margin-top:32px;align-items:center}
 .addr{background:var(--paper-deep);border:2px solid var(--ink);border-radius:20px;padding:28px}
 .addr .venue{font-family:var(--f-bold);font-size:34px;letter-spacing:.03em;line-height:1}
 .addr address{font-style:normal;font-size:18px;margin-top:10px;user-select:all}
@@ -108,11 +108,11 @@ hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-rep
 .btn:hover{background:var(--ink-soft);border-color:var(--ink-soft);color:var(--on-ink)}
 .how{display:grid;gap:22px}
 .how p{font-size:16px}
-.there .art{grid-column:1 / -1;max-width:min(560px,100%);justify-self:center;margin-top:10px}
+.there .art{grid-column:1 / -1;max-width:min(520px,100%);justify-self:center;margin-top:0}
 @media (max-width:760px){.there{grid-template-columns:minmax(0,1fr)}}
 
 /* rsvp */
-.rsvp{background:var(--ink);color:var(--on-ink);border-radius:28px;padding:clamp(28px,5vw,56px);margin-top:40px;max-width:760px;margin-inline:auto}
+.rsvp{background:var(--ink);color:var(--on-ink);border-radius:28px;padding:clamp(28px,4vw,44px);margin-top:24px;max-width:860px;margin-inline:auto}
 .rsvp .h2,.rsvp .kicker{color:var(--on-ink)}
 form{display:grid;gap:22px;margin-top:30px}
 label.f{display:block;font-family:var(--f-bold);font-size:19px;letter-spacing:.05em;margin-bottom:6px}
@@ -137,7 +137,7 @@ input:focus,textarea:focus{outline:2px dashed var(--on-ink);outline-offset:3px}
 @media (max-width:520px){.choice{grid-template-columns:1fr}}
 
 /* faq */
-.faq{max-width:720px;margin:40px auto 0;display:grid;gap:12px}
+.faq{max-width:860px;margin:28px auto 0;display:grid;gap:12px}
 .faq details{border:2px solid var(--ink);border-radius:16px;padding:14px 20px;background:color-mix(in srgb,var(--paper) 70%,transparent)}
 .faq summary{font-family:var(--f-bold);font-size:20px;letter-spacing:.04em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
@@ -145,9 +145,10 @@ input:focus,textarea:focus{outline:2px dashed var(--on-ink);outline-offset:3px}
 .faq details[open] summary::after{content:"–"}
 .faq details p{margin-top:8px;font-size:16px}
 
-footer{text-align:center;padding-top:40px;overflow:hidden}
+footer{text-align:center;padding-top:24px;overflow:hidden}
 footer .last{font-family:var(--f-brush);font-size:clamp(36px,6vw,60px);line-height:1}
 footer .sub{letter-spacing:.12em;font-size:14px;margin-top:10px}
+@media (min-width:1100px){body{font-size:18px}.cards p,.how p,.faq details p,.sched .w{font-size:17px}}
 footer .sky{width:min(1600px,160%);max-width:none;position:relative;left:50%;transform:translateX(-50%);margin-top:30px;margin-bottom:-6px}
 </style>
 </head>
