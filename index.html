@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mollie &amp; Jack's Wedding</title>
+<meta name="description" content="Mollie &amp; Jack's wedding · Saturday 1st May 2027 · Clapton Country Club, London E5">
+<meta property="og:title" content="Mollie &amp; Jack's Wedding">
+<meta property="og:description" content="Saturday 1st May 2027 · Clapton Country Club, London E5. Kindly RSVP by 15th February 2027.">
+<link rel="icon" type="image/png" href="img/spark_big.png">
+<style>
+@font-face{font-family:'Caveat Brush';src:url(fonts/caveat-brush-latin-400-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Chewy';src:url(fonts/chewy-latin-400-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Mali';font-weight:500;src:url(fonts/mali-latin-500-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Mali';font-weight:600;src:url(fonts/mali-latin-600-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Mali';font-weight:700;src:url(fonts/mali-latin-700-normal.woff2) format('woff2');font-display:swap}
+</style>
+<style>
+/* Layout: one long hand-drawn invitation you scroll down, wine-red ink on pink paper; sections set like stationery cards */
+:root{
+  --paper:#F6EDF0;      /* the invitation paper */
+  --paper-deep:#EFDDE3; /* pressed panels */
+  --ink:#8E102E;        /* wine-red ink */
+  --ink-soft:#A8445E;   /* secondary ink */
+  --ink-faint:rgba(142,16,46,.28);
+  --on-ink:#F9F1F3;
+  --f-brush:'Caveat Brush','Comic Sans MS',cursive;
+  --f-bold:'Chewy','Arial Rounded MT Bold','Trebuchet MS',sans-serif;
+  --f-body:'Mali','Trebuchet MS',system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper) url(img/paper.jpg) repeat;background-size:380px auto;color:var(--ink);font-family:var(--f-body);font-weight:600;font-size:17px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px dashed var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1.5px solid var(--ink-faint)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.nav .mono{font-family:var(--f-bold);font-size:24px;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:4px 18px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}
+.nav a.l{font-family:var(--f-bold);font-size:17px;letter-spacing:.06em;text-decoration:none;padding:4px 0;white-space:nowrap}
+.nav a.l:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.nav a.cta{background:var(--ink);color:var(--on-ink);padding:5px 14px;border-radius:999px}
+.nav a.cta:hover{text-decoration:none;background:var(--ink-soft)}
+@media (max-width:640px){.nav .hide-sm{display:none}.nav .mono{font-size:20px}.hero .where{text-align:center}.hero .where img{margin-inline:auto}}
+
+/* hero */
+.hero{position:relative;text-align:center;padding-bottom:40px;overflow:hidden}
+.hero .lights{width:min(1250px,150%);max-width:none;margin:-4% auto 0;position:relative;left:50%;transform:translateX(-50%)}
+.hero .names{width:min(720px,92%);margin:8px auto 0}
+.hero .lead{font-family:var(--f-body);font-weight:600;letter-spacing:.12em;font-size:clamp(13px,2.1vw,18px);margin:18px 0 0}
+.hero .when{display:flex;align-items:center;justify-content:center;gap:clamp(18px,5vw,56px);margin-top:34px;flex-wrap:wrap}
+.hero .date{width:clamp(180px,26vw,250px)}
+.hero .where{text-align:left;font-family:var(--f-bold);font-size:clamp(26px,3.6vw,36px);line-height:1.05;letter-spacing:.03em}
+.hero .where small{display:block;font-size:.66em;margin-top:6px}
+.hero .where img{width:100%;max-width:260px;margin:14px 0 12px}
+.count{display:inline-flex;gap:10px;align-items:baseline;margin-top:30px;font-family:var(--f-bold);letter-spacing:.05em;font-size:19px;border:2px solid var(--ink);border-radius:999px;padding:6px 20px}
+.count b{font-family:var(--f-body);font-weight:700;font-size:24px;font-variant-numeric:tabular-nums}
+.spk{position:absolute;pointer-events:none}
+
+/* sections */
+section.block{padding-block:72px}
+.h2{font-family:var(--f-brush);font-weight:400;font-size:clamp(52px,8vw,84px);line-height:.9;margin:0;text-align:center;text-wrap:balance;letter-spacing:.01em}
+.kicker{font-family:var(--f-body);letter-spacing:.14em;font-size:14px;text-align:center;margin:12px 0 0;color:var(--ink-soft)}
+.h3{font-family:var(--f-bold);font-weight:400;font-size:25px;letter-spacing:.05em;line-height:1.1;margin:0 0 6px}
+p{margin:0}
+.prose p+p{margin-top:14px}
+hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-repeat;max-width:320px;margin:56px auto 0}
+
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center;margin-top:44px}
+.story .art{max-width:min(440px,100%);justify-self:center}
+.story .prose{max-width:34em}
+.todo{border:2px dashed var(--ink-faint);border-radius:14px;padding:14px 16px;color:var(--ink-soft);font-weight:500}
+.todo b{font-family:var(--f-bold);font-weight:400;letter-spacing:.05em;display:block;color:var(--ink)}
+@media (max-width:760px){.story{grid-template-columns:minmax(0,1fr);gap:28px}.story .art{max-width:min(320px,100%)}}
+
+/* the day */
+.day{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 56px;margin-top:48px;align-items:start}
+.sched{list-style:none;margin:0;padding:0;border-left:2.5px solid var(--ink);margin-left:8px}
+.sched li{position:relative;padding:0 0 22px 26px}
+.sched li:last-child{padding-bottom:0}
+.sched li::before{content:"";position:absolute;left:-8.5px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2.5px solid var(--ink)}
+.sched li.big::before{background:var(--ink)}
+.sched .t{font-family:var(--f-body);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;line-height:1.1;display:block}
+.sched .w{font-size:16px;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 36px}
+.cards p{font-size:16px}
+.cards .wide{grid-column:1 / -1;background:var(--ink);color:var(--on-ink);border-radius:18px;padding:22px 24px}
+.dc{font-family:var(--f-bold);font-weight:400;letter-spacing:.04em}
+@media (max-width:820px){.day{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.cards{grid-template-columns:1fr}}
+
+/* getting there */
+.there{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:44px;align-items:center}
+.addr{background:var(--paper-deep);border:2px solid var(--ink);border-radius:20px;padding:28px}
+.addr .venue{font-family:var(--f-bold);font-size:34px;letter-spacing:.03em;line-height:1}
+.addr address{font-style:normal;font-size:18px;margin-top:10px;user-select:all}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{font-family:var(--f-bold);font-size:18px;letter-spacing:.05em;background:var(--ink);color:var(--on-ink);border:2px solid var(--ink);border-radius:999px;padding:8px 20px;text-decoration:none;cursor:pointer;line-height:1.2}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{background:var(--ink-soft);border-color:var(--ink-soft);color:var(--on-ink)}
+.how{display:grid;gap:22px}
+.how p{font-size:16px}
+.there .art{grid-column:1 / -1;max-width:min(560px,100%);justify-self:center;margin-top:10px}
+@media (max-width:760px){.there{grid-template-columns:minmax(0,1fr)}}
+
+/* rsvp */
+.rsvp{background:var(--ink);color:var(--on-ink);border-radius:28px;padding:clamp(28px,5vw,56px);margin-top:40px;max-width:760px;margin-inline:auto}
+.rsvp .h2,.rsvp .kicker{color:var(--on-ink)}
+form{display:grid;gap:22px;margin-top:30px}
+label.f{display:block;font-family:var(--f-bold);font-size:19px;letter-spacing:.05em;margin-bottom:6px}
+.hint{font-weight:500;font-size:14px;opacity:.85;font-family:var(--f-body);letter-spacing:0}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--paper);border:2px solid var(--paper);border-radius:12px;padding:11px 14px}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus{outline:2px dashed var(--on-ink);outline-offset:3px}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice label{display:flex;gap:12px;align-items:flex-start;border:2px solid rgba(249,241,243,.5);border-radius:16px;padding:14px 16px;cursor:pointer}
+.choice input{accent-color:var(--paper);width:20px;height:20px;margin-top:3px;flex:none}
+.choice label:has(input:checked){background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.choice .t{font-family:var(--f-bold);font-size:20px;letter-spacing:.05em;line-height:1.1;display:block}
+.choice .s{font-size:14px;font-weight:500}
+.rsvp .btn{background:var(--paper);color:var(--ink);border-color:var(--paper);font-size:21px;padding:11px 28px;justify-self:start}
+.rsvp .btn:hover{background:var(--on-ink);opacity:.9}
+.err{font-size:15px;font-weight:600;background:var(--paper);color:var(--ink);border-radius:10px;padding:8px 12px}
+.go{display:grid;gap:22px;justify-items:center;text-align:center;margin-top:28px;max-width:34em;margin-inline:auto}
+.rsvp .btn.big{justify-self:center;font-size:24px;padding:13px 40px}
+.small{font-size:15px;opacity:.9}
+.thanks{text-align:center;padding:30px 0 6px}
+.thanks .h2{font-size:clamp(44px,7vw,68px)}
+@media (max-width:520px){.choice{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:720px;margin:40px auto 0;display:grid;gap:12px}
+.faq details{border:2px solid var(--ink);border-radius:16px;padding:14px 20px;background:color-mix(in srgb,var(--paper) 70%,transparent)}
+.faq summary{font-family:var(--f-bold);font-size:20px;letter-spacing:.04em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-body);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:8px;font-size:16px}
+
+footer{text-align:center;padding-top:40px;overflow:hidden}
+footer .last{font-family:var(--f-brush);font-size:clamp(36px,6vw,60px);line-height:1}
+footer .sub{letter-spacing:.12em;font-size:14px;margin-top:10px}
+footer .sky{width:min(1600px,160%);max-width:none;position:relative;left:50%;transform:translateX(-50%);margin-top:30px;margin-bottom:-6px}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="mono" href="#top">M &amp; J</a>
+    <ul>
+      <li class="hide-sm"><a class="l" href="#us">Us</a></li>
+      <li><a class="l" href="#day">The day</a></li>
+      <li><a class="l" href="#there">Getting there</a></li>
+      <li class="hide-sm"><a class="l" href="#faq">FAQs</a></li>
+      <li><a class="l cta" href="#rsvp">RSVP</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="lights" src="img/lights.png" alt="Hand-drawn disco ball hanging from strings of festoon lights">
+  <img class="spk" src="img/spark_big.png" alt="" style="right:8%;top:42%;width:34px">
+  <img class="spk" src="img/spark_sm.png" alt="" style="left:9%;top:48%;width:22px">
+  <img class="spk" src="img/spark3.png" alt="" style="right:16%;bottom:16%;width:22px">
+  <div class="wrap">
+    <h1 style="margin:0"><img class="names" src="img/mj.png" alt="Mollie &amp; Jack's Wedding" width="1100" height="152"></h1>
+    <p class="lead">WE CANNOT WAIT TO CELEBRATE WITH YOU</p>
+    <div class="when">
+      <img class="date" src="img/date.png" alt="Saturday 1st May 2027" width="560" height="368">
+      <div class="where">
+        <img src="img/rule.png" alt="">
+        CLAPTON<br>COUNTRY CLUB<small>LONDON E5</small>
+      </div>
+    </div>
+    <div class="count" id="count" aria-live="polite"><b id="days">—</b> DAYS TO GO</div>
+  </div>
+</header>
+
+<main>
+  <section class="block" id="us">
+    <div class="wrap">
+      <h2 class="h2">Hello, it's us!</h2>
+      <p class="kicker">MEET MOLLIE &amp; JACK</p>
+      <div class="story">
+        <img class="art" src="img/couple.png" alt="Illustration of Mollie and Jack sitting on a wedding cake, raising cocktail glasses" width="900" height="834">
+        <div class="prose">
+          <p>We're Mollie and Jack, two psychologists from London who somehow decided that working together all week wasn't enough, so now we're getting married too.</p>
+          <p>Mollie is an educational and child psychologist. Jack is a sport psychologist. Together we run Mentology, so between us we have professional opinions on nerves, big performances and keeping calm under pressure. None of that will be needed on the dance floor.</p>
+          <!-- EDIT HERE: replace this box with a paragraph about how you met, e.g. <p>We met at ...</p> -->
+          <div class="todo"><b>OUR STORY</b>How we met, the proposal, and a favourite photo or two go here. Send them over and we'll drop them in.</div>
+        </div>
+      </div>
+      <hr class="brush">
+    </div>
+  </section>
+
+  <section class="block" id="day" style="padding-top:8px">
+    <div class="wrap">
+      <h2 class="h2">The Day</h2>
+      <p class="kicker">SATURDAY 1ST MAY 2027 · CLAPTON COUNTRY CLUB</p>
+      <div class="day">
+        <ol class="sched">
+          <li><span class="t">12:15pm</span><span class="w">Please arrive</span></li>
+          <li class="big"><span class="t">1:00pm</span><span class="w">Ceremony</span></li>
+          <li><span class="t">Then</span><span class="w">Drinks, dinner &amp; dancing</span></li>
+          <li><span class="t">12:30am</span><span class="w">Last orders</span></li>
+          <li class="big"><span class="t">1:00am</span><span class="w">Carriages</span></li>
+        </ol>
+        <div class="cards">
+          <div class="wide">
+            <h3 class="h3">DRESS CODE</h3>
+            <p><span class="dc">LONDON CHIC.</span> Think gallery opening in Shoreditch, not 8am on the Central line. And wear shoes you can actually dance in: carriages aren't until 1am.</p>
+          </div>
+          <div>
+            <h3 class="h3">ONE VENUE</h3>
+            <p>The ceremony and reception are both at Clapton Country Club, so there's no travelling in between.</p>
+          </div>
+          <div>
+            <h3 class="h3">ADULTS ONLY</h3>
+            <p>We love your little ones, but our celebration will be adults only.</p>
+          </div>
+          <div style="grid-column:1 / -1">
+            <h3 class="h3">GIFTS</h3>
+            <p>Your presence is truly the best gift. If you'd like to, you can contribute to our honeymoon fund.</p>
+          </div>
+        </div>
+      </div>
+      <hr class="brush">
+    </div>
+  </section>
+
+  <section class="block" id="there" style="padding-top:8px">
+    <div class="wrap">
+      <h2 class="h2">Getting There</h2>
+      <p class="kicker">THERE'S NO PARKING AT THE VENUE</p>
+      <div class="there">
+        <div class="addr">
+          <div class="venue">CLAPTON COUNTRY CLUB</div>
+          <address id="address">38–40 Upper Clapton Road, London E5 8BQ</address>
+          <div class="btns">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Clapton+Country+Club%2C+38-40+Upper+Clapton+Road%2C+London+E5+8BQ" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="btn ghost" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener">Plan with TfL</a>
+            <button class="btn ghost" type="button" id="copy">Copy address</button>
+          </div>
+        </div>
+        <div class="how">
+          <div>
+            <h3 class="h3">BY TRAIN</h3>
+            <p>The nearest station is Clapton, on the London Overground. The venue is on Upper Clapton Road, tucked down a cobbled alley.</p>
+          </div>
+          <div>
+            <h3 class="h3">BY BUS OR TAXI</h3>
+            <p>Several bus routes run along Upper Clapton Road. Taxis and minicabs can drop you right outside.</p>
+          </div>
+          <div>
+            <h3 class="h3">GETTING HOME</h3>
+            <p>Carriages are at 1am. Pre-book your cab home, or plan your night bus before the second glass of fizz.</p>
+          </div>
+        </div>
+        <img class="art" src="img/skyline_small.png" alt="" width="700" height="162">
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="rsvp" style="padding-top:16px">
+    <div class="wrap">
+      <div class="rsvp">
+        <h2 class="h2">RSVP</h2>
+        <p class="kicker">KINDLY REPLY BY 15TH FEBRUARY 2027</p>
+        <div class="go">
+          <p>It only takes a minute. Please reply once for everyone named on your invitation, and let us know about any dietary requirements.</p>
+          <a class="btn big" id="rsvp-btn" href="#rsvp" target="_blank" rel="noopener">RSVP now</a>
+          <p class="small" id="rsvp-soon" hidden>Our RSVP form opens soon. Check back here shortly.</p>
+        </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq" style="padding-top:16px">
+    <div class="wrap">
+      <h2 class="h2">FAQs</h2>
+      <div class="faq">
+        <details><summary>Are the ceremony and reception in the same place?</summary><p>Yes. Everything happens at Clapton Country Club, so once you arrive you're set for the day.</p></details>
+        <details><summary>Can we bring children?</summary><p>Our wedding is adults only. We hope you enjoy the night off.</p></details>
+        <details><summary>Is there parking?</summary><p>There's no parking at the venue. Please come by train, bus or taxi.</p></details>
+        <details><summary>Is it outdoors?</summary><p>No, despite the name. Clapton Country Club is an indoor venue, so leave the wellies at home.</p></details>
+        <details><summary>When do I need to reply by?</summary><p>Please RSVP by Monday 15th February 2027.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="last">See you on the dance floor!</div>
+    <div class="sub">MOLLIE &amp; JACK · 1ST MAY 2027</div>
+  </div>
+  <img class="sky" src="img/skyline.png" alt="Hand-drawn London skyline" width="2000" height="435">
+</footer>
+
+<script>
+/* =====================================================================
+   EDIT HERE: paste your Google Form link between the quote marks.
+   Example: var RSVP_LINK = "https://forms.gle/AbC123xyz";
+   ===================================================================== */
+var RSVP_LINK = "";
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('rsvp-btn');
+  if(RSVP_LINK){btn.href=RSVP_LINK;}else{btn.hidden=true;document.getElementById('rsvp-soon').hidden=false;}
+  document.querySelectorAll('a.cta').forEach(function(a){a.href='#rsvp';});
+  // countdown to 1 May 2027, London
+  var target=new Date('2027-05-01T13:00:00+01:00');
+  var d=Math.ceil((target-new Date())/86400000);
+  var el=document.getElementById('days'), c=document.getElementById('count');
+  if(d>1){el.textContent=d;}else if(d===1){c.innerHTML='<b>1</b> DAY TO GO';}else{c.textContent='WE DID IT!';}
+
+  var copy=document.getElementById('copy');
+  copy.addEventListener('click',function(){
+    var t=document.getElementById('address').textContent;
+    var done=function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy address';},1800);};
+    try{navigator.clipboard.writeText(t).then(done,sel);}catch(e){sel();}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('address'));var s=getSelection();s.removeAllRanges();s.addRange(r);copy.textContent='Selected, now copy';}
+  });
+
+})();
+</script>
+
+</body>
+</html>

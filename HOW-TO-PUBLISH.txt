@@ -1,0 +1,74 @@
+MOLLIE & JACK'S WEDDING WEBSITE - HOW TO PUBLISH
+=================================================
+
+WHAT'S IN THIS FOLDER
+  index.html   the website (the only file you edit)
+  img/         the illustrations
+  fonts/       the hand-lettered fonts
+  .nojekyll    tells GitHub Pages to serve the files as-is (keep it)
+Keep these together. Always upload the whole folder.
+
+
+1. MAKE THE RSVP FORM (Google Forms, free)
+  - Go to forms.google.com and start a blank form.
+  - Title: Mollie & Jack's Wedding RSVP
+  - Add these questions:
+      Name(s) of everyone on your invitation   Short answer, required
+      Email                                    Short answer, required
+      Can you make it?                         Multiple choice, required
+                                                 - Joyfully accepts
+                                                 - Sadly declines
+      Dietary requirements (for each guest)    Paragraph
+      The song that will get you dancing       Short answer
+  - Optional: Palette icon > pick a wine-red colour (#8E102E) to match the site.
+  - Responses tab > "Link to Sheets" so replies go into a spreadsheet.
+  - Click Send > the link icon > tick "Shorten URL" > Copy.
+
+
+2. PASTE THE LINK INTO THE SITE
+  - Open index.html in a plain text editor
+      Mac: TextEdit (Format > Make Plain Text), or the free app BBEdit
+      Windows: Notepad
+  - Search for:  var RSVP_LINK = "";
+  - Paste your link between the quote marks, e.g.
+      var RSVP_LINK = "https://forms.gle/AbC123xyz";
+  - Save. Until a link is added, the site says "Our RSVP form opens soon".
+  - Optional: search for "EDIT HERE" to find the Our Story box and replace it
+    with your own paragraph, e.g. <p>We met at ...</p>
+
+
+3. PUT IT ONLINE (GitHub Pages, free)
+  - Go to github.com/new (signed in as JackHicksFlynn).
+  - Repository name: mollie-and-jack-wedding
+  - Public (free GitHub Pages needs a public repo). Leave every "Add ..."
+    box unticked so the repo starts empty. Click Create repository.
+  - Upload the site: Claude can push this folder for you, or on the empty
+    repo page click "uploading an existing file" and drag in everything in
+    this folder (index.html, img, fonts, .nojekyll), then Commit changes.
+  - Settings > Pages > Build and deployment:
+      Source: Deploy from a branch
+      Branch: main   Folder: / (root)   > Save
+  - After a minute or two the site is live at
+      https://jackhicksflynn.github.io/mollie-and-jack-wedding/
+
+
+4. TEST IT
+  - Open the site on your phone.
+  - Press RSVP now, send a test reply, check it arrives in the spreadsheet,
+    then delete the test row.
+
+
+5. MAKING CHANGES LATER
+  - Edit index.html, then either ask Claude to commit and push, or on
+    github.com open the repo > index.html > pencil icon, edit, Commit changes.
+  - The live site updates a minute or two later (Actions tab shows progress).
+
+
+6. OPTIONAL: YOUR OWN ADDRESS (about GBP 10 a year)
+  - Buy a name such as mollieandjack.co.uk (123-reg, Namecheap, etc.).
+  - At the registrar, add DNS records pointing to GitHub Pages:
+      four A records for @:  185.199.108.153  185.199.109.153
+                             185.199.110.153  185.199.111.153
+      a CNAME record for www:  jackhicksflynn.github.io
+  - In the repo: Settings > Pages > Custom domain > enter the name > Save,
+    then tick "Enforce HTTPS" once it becomes available.
