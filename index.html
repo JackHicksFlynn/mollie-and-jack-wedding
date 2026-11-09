@@ -104,20 +104,32 @@ hr.brush{border:0;height:14px;background:url(img/rule.png) center/contain no-rep
 @media (max-width:760px){.story{grid-template-columns:minmax(0,1fr);gap:28px}.story .art{max-width:min(320px,100%)}}
 
 /* the day */
-.day{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 64px;margin-top:32px;align-items:start}
-.sched{list-style:none;margin:0;padding:0;border-left:2.5px solid var(--ink);margin-left:8px}
-.sched li{position:relative;padding:0 0 22px 26px}
+.day{margin-top:40px}
+/* the day as a tram line: vertical on phones, a horizontal route from 760px (the venue is a converted tram stop) */
+.sched{list-style:none;margin:0 auto;padding:0;max-width:340px;position:relative}
+.sched::before{content:"";position:absolute;left:10px;top:16px;bottom:16px;width:5px;border-radius:3px;background:var(--ink)}
+.sched li{position:relative;padding:0 0 28px 48px}
 .sched li:last-child{padding-bottom:0}
-.sched li::before{content:"";position:absolute;left:-8.5px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2.5px solid var(--ink)}
-.sched li.big::before{background:var(--ink)}
-.sched .t{font-family:var(--f-body);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;line-height:1.1;display:block}
-.sched .w{font-size:16px;color:var(--ink-soft)}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 36px}
+.sched li::before{content:"";position:absolute;left:0;top:3px;width:25px;height:25px;border-radius:50%;background:var(--paper);border:4.5px solid var(--ink);box-sizing:border-box}
+.sched li.big::before{background:var(--ink);box-shadow:0 0 0 3.5px var(--paper),0 0 0 7px var(--ink)}
+.sched .t{font-family:var(--f-body);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;line-height:1.15;display:block}
+.sched .w{font-size:16px;color:var(--ink-soft);display:block;margin-top:2px}
+@media (min-width:760px){
+  .sched{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:none}
+  .sched::before{left:10%;right:10%;top:54px;bottom:auto;width:auto;height:6px}
+  .sched li{padding:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .sched li::before{position:static;order:2;margin:14px 0 16px;width:30px;height:30px;flex:none}
+  .sched .t{order:1;line-height:28px;height:28px}
+  .sched .w{order:3;max-width:11em;margin-top:0}
+}
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:56px}
+.cards > div{background:var(--paper-deep);border:2px solid var(--ink);border-radius:20px;padding:24px 24px 26px}
+.cards .h3{margin-bottom:10px}
 .cards p{font-size:16px}
-.cards .wide{grid-column:1 / -1;background:var(--ink);color:var(--on-ink);border-radius:18px;padding:22px 24px}
+.cards .feature{background:var(--ink);color:var(--on-ink)}
 .dc{font-family:var(--f-bold);font-weight:400;letter-spacing:.04em}
-@media (max-width:820px){.day{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:480px){.cards{grid-template-columns:1fr}}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media (min-width:1100px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* getting there */
 .there{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 64px;margin-top:32px;align-items:center}
@@ -256,7 +268,7 @@ footer .sky{width:max(100%,640px);max-width:none;position:relative;left:50%;tran
           <li class="big"><span class="t">1:00am</span><span class="w">Carriages</span></li>
         </ol>
         <div class="cards">
-          <div class="wide">
+          <div class="feature">
             <h3 class="h3">DRESS CODE</h3>
             <p><span class="dc">LONDON CHIC.</span> We do love a bit of colour, so don&rsquo;t be shy!</p>
           </div>
@@ -268,7 +280,7 @@ footer .sky{width:max(100%,640px);max-width:none;position:relative;left:50%;tran
             <h3 class="h3">ADULTS ONLY</h3>
             <p>We love your little ones, but our celebration will be adults only.</p>
           </div>
-          <div style="grid-column:1 / -1">
+          <div>
             <h3 class="h3">GIFTS</h3>
             <p>Your presence is truly the best gift. If you'd like to, you can contribute to our honeymoon fund.</p>
           </div>
